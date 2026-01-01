@@ -1,0 +1,9 @@
+{
+  "currentDateKey": "2026-01-01",
+  "puzzles": {
+    "2026-01-01": {
+      "version": 1,
+      "url": "/puzzles/2026-01-01.v1.json"
+    }
+  }
+}

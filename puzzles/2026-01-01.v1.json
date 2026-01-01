@@ -1,0 +1,16 @@
+{
+  "id": "2026-01-01",
+  "dateKey": "2026-01-01",
+  "version": 1,
+  "answerCanonical": "Venice",
+  "answerAliases": ["Venezia"],
+  "hints": [
+    {
+      "id": "h1",
+      "index": 0,
+      "text": "You can cross the entire city without ever seeing a car.",
+      "explanationText": "Venice has no roads for cars; transportation happens via canals and on foot."
+    }
+  ],
+  "solutionExplanation": "Venice is uniquely built on water, with canals replacing roads."
+}
