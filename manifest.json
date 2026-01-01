@@ -5,9 +5,11 @@
     "format": "YYYY-MM-DD",
     "releaseTimeLocal": "00:00:00"
   },
-  "puzzles": {  },
+  "puzzles": {
+ 
+  },
   "meta": {
-    "generatedAtUtc": "2026-01-01T18:56:12Z",
+    "generatedAtUtc": "2026-01-01T19:04:10Z",
     "minAppVersion": "1.0.0",
     "prefetchDays": 7
   }
