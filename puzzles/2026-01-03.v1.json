@@ -1,0 +1,46 @@
+{
+  "id": "2026-01-03",
+  "dateKey": "2026-01-03",
+  "version": 1,
+  "category": "Object",
+  "tags": [
+    "Art",
+    "Painting",
+    "Renaissance"
+  ],
+  "answerCanonical": "Mona Lisa",
+  "answerAliases": [],
+  "hints": [
+    {
+      "id": "h1",
+      "index": 0,
+      "text": "People line up patiently, only to spend a moment with me.",
+      "explanationText": "Visitors often queue for long periods just to briefly view the painting."
+    },
+    {
+      "id": "h2",
+      "index": 1,
+      "text": "People are often surprised by how small I actually am.",
+      "explanationText": "The Mona Lisa is much smaller than many expect after seeing reproductions."
+    },
+    {
+      "id": "h3",
+      "index": 2,
+      "text": "I am famous for what I do not clearly reveal.",
+      "explanationText": "Her ambiguous expression and unclear smile are central to the painting's fame."
+    },
+    {
+      "id": "h4",
+      "index": 3,
+      "text": "I was painted in the early 16th century and now reside in the Louvre.",
+      "explanationText": "Leonardo painted it around 1503�1506; it is displayed in Paris."
+    },
+    {
+      "id": "h5",
+      "index": 4,
+      "text": "I am Leonardo da Vinci's most famous painting.",
+      "explanationText": "This identifies the work unambiguously."
+    }
+  ],
+  "solutionExplanation": "These clues describe the Mona Lisa, a small but famous painting known for its ambiguity, long visitor queues, and its place in the Louvre as Leonardo da Vinci's most renowned work."
+}
