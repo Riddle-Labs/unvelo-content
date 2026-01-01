@@ -1,30 +1,39 @@
 {
   "schemaVersion": 1,
-
   "dateKeyPolicy": {
     "type": "user_local_date",
     "format": "YYYY-MM-DD",
     "releaseTimeLocal": "00:00:00"
   },
-
   "puzzles": {
     "2026-01-01": {
       "version": 1,
       "url": "/puzzles/2026-01-01.v1.json",
-      "sha256": "OPTIONAL_HASH"
+      "sha256": "5b7eebc1e70d9d021c19ed28cea5e3738e366aecbe6ddac62d03e85af34a09e1"
     },
     "2026-01-02": {
       "version": 1,
-      "url": "/puzzles/2026-01-02.v1.json"
+      "url": "/puzzles/2026-01-02.v1.json",
+      "sha256": "d5c1b6a96bcfd7fd027c58d099d1d272e85807791bd73cf747714cba783b6d45"
     },
     "2026-01-03": {
       "version": 1,
-      "url": "/puzzles/2026-01-03.v1.json"
+      "url": "/puzzles/2026-01-03.v1.json",
+      "sha256": "16f45e4917ad9a2dbac70fdbf97f7bda06908e3af9938ba1e795104c722e530b"
+    },
+    "2026-01-04": {
+      "version": 1,
+      "url": "/puzzles/2026-01-04.v1.json",
+      "sha256": "ebf14260fc9af63efcf5dc47acb3c62a7bb55011ebc174b5b7daf46fcab762e7"
+    },
+    "2026-01-05": {
+      "version": 1,
+      "url": "/puzzles/2026-01-05.v1.json",
+      "sha256": "c4482b6dcc4cce0e951d34e33f0efb294d2ed56850cad9f48c78cf5a59aa46b4"
     }
   },
-
   "meta": {
-    "generatedAtUtc": "2026-01-01T12:00:00Z",
+    "generatedAtUtc": "2026-01-01T18:50:06Z",
     "minAppVersion": "1.0.0",
     "prefetchDays": 7
   }

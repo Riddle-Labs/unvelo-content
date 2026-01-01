@@ -1,0 +1,47 @@
+{
+  "id": "2026-01-04",
+  "dateKey": "2026-01-04",
+  "version": 1,
+  "category": "Person",
+  "tags": [
+    "Scientist",
+    "Inventor",
+    "Philanthropy",
+    "Sweden"
+  ],
+  "answerCanonical": "Alfred Nobel",
+  "answerAliases": [],
+  "hints": [
+    {
+      "id": "h1",
+      "index": 0,
+      "text": "Nowadays, I am mostly famous for making other people famous.",
+      "explanationText": "Nobel is best known for the prizes that honor others, not his own work."
+    },
+    {
+      "id": "h2",
+      "index": 1,
+      "text": "My invention meant for construction ended up shaping warfare.",
+      "explanationText": "Dynamite was designed for mining and construction but became widely used in war."
+    },
+    {
+      "id": "h3",
+      "index": 2,
+      "text": "Seeing how I was described publicly changed how I thought about my legacy.",
+      "explanationText": "A premature obituary called Nobel a �merchant of death,� reportedly influencing his decision to establish the prizes."
+    },
+    {
+      "id": "h4",
+      "index": 3,
+      "text": "I was a Swedish chemist and engineer active in the 19th century.",
+      "explanationText": "This places Nobel historically and professionally."
+    },
+    {
+      "id": "h5",
+      "index": 4,
+      "text": "I established the Nobel Prizes through my will.",
+      "explanationText": "Nobel left his fortune to fund the prizes after his death."
+    }
+  ],
+  "solutionExplanation": "The clues lead to Alfred Nobel, whose invention of dynamite and concern over his legacy resulted in the Nobel Prizes that made him famous for honoring others."
+}

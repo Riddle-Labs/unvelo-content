@@ -1,0 +1,46 @@
+{
+  "id": "2026-01-05",
+  "dateKey": "2026-01-05",
+  "version": 1,
+  "category": "Object",
+  "tags": [
+    "Document",
+    "Identity",
+    "Travel"
+  ],
+  "answerCanonical": "Passport",
+  "answerAliases": [],
+  "hints": [
+    {
+      "id": "h1",
+      "index": 0,
+      "text": "I am small, but I decide how far you can go.",
+      "explanationText": "A passport's power determines where and how freely a person can travel."
+    },
+    {
+      "id": "h2",
+      "index": 1,
+      "text": "My pages tell a story mostly through marks, not sentences.",
+      "explanationText": "Stamps, visas, and entry marks show travel history without needing narrative text."
+    },
+    {
+      "id": "h3",
+      "index": 2,
+      "text": "Some versions of me open far more doors than others.",
+      "explanationText": "Different passports grant very different levels of visa-free access."
+    },
+    {
+      "id": "h4",
+      "index": 3,
+      "text": "I am issued by a state to certify nationality.",
+      "explanationText": "A passport formally confirms the holder's nationality."
+    },
+    {
+      "id": "h5",
+      "index": 4,
+      "text": "I am required to cross most international borders.",
+      "explanationText": "This defines the passport's core function."
+    }
+  ],
+  "solutionExplanation": "All hints point to a passport, a state-issued document that certifies nationality, records travel, and determines how freely someone can cross international borders."
+}
