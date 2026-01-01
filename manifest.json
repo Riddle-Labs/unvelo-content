@@ -1,9 +1,31 @@
 {
-  "currentDateKey": "2026-01-01",
+  "schemaVersion": 1,
+
+  "dateKeyPolicy": {
+    "type": "user_local_date",
+    "format": "YYYY-MM-DD",
+    "releaseTimeLocal": "00:00:00"
+  },
+
   "puzzles": {
     "2026-01-01": {
       "version": 1,
-      "url": "/puzzles/2026-01-01.v1.json"
+      "url": "/puzzles/2026-01-01.v1.json",
+      "sha256": "OPTIONAL_HASH"
+    },
+    "2026-01-02": {
+      "version": 1,
+      "url": "/puzzles/2026-01-02.v1.json"
+    },
+    "2026-01-03": {
+      "version": 1,
+      "url": "/puzzles/2026-01-03.v1.json"
     }
+  },
+
+  "meta": {
+    "generatedAtUtc": "2026-01-01T12:00:00Z",
+    "minAppVersion": "1.0.0",
+    "prefetchDays": 7
   }
 }

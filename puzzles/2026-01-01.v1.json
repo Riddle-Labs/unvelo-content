@@ -2,6 +2,8 @@
   "id": "2026-01-01",
   "dateKey": "2026-01-01",
   "version": 1,
+  "category": "Place",
+  "tags": ["City", "Italy"],
   "answerCanonical": "Venice",
   "answerAliases": ["Venezia"],
   "hints": [
@@ -9,8 +11,13 @@
       "id": "h1",
       "index": 0,
       "text": "You can cross the entire city without ever seeing a car.",
-      "explanationText": "Venice has no roads for cars; transportation happens via canals and on foot."
+      "explanationText": "Venice has no roads for cars; transportation is by foot and boat."
+    },
+    {
+      "id": "h2",
+      "index": 1,
+      "text": "Gondolas glide through its streets."
     }
   ],
-  "solutionExplanation": "Venice is uniquely built on water, with canals replacing roads."
+  "solutionExplanation": "All hints point to Venice, a canal city with car-free movement and famous gondolas."
 }
