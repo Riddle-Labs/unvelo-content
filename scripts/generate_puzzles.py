@@ -11,6 +11,16 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 
+@dataclass
+class RowResult:
+    date_key: str
+    version: int
+    created: bool
+    refreshed: bool
+    bumped: bool
+    reason: str
+
+
 ROOT = Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "content_generation.csv"
 PUZZLES_DIR = ROOT / "puzzles"
@@ -274,6 +284,10 @@ def generate(
     if CONTENT_HASH_COL not in table.header:
         table.header.append(CONTENT_HASH_COL)
 
+    results: List[RowResult] = []
+    skipped_blank_rows = 0
+    skipped_missing_date = 0
+
     puzzles_dir.mkdir(parents=True, exist_ok=True)
     manifest = load_manifest(manifest_path)
     ensure_manifest_shape(manifest)
@@ -281,13 +295,16 @@ def generate(
     puzzles_manifest: Dict[str, Any] = manifest["puzzles"]
 
     any_csv_updates = False
+    any_manifest_updates = False
 
     for row in table.rows:
         if not _row_has_any_content(row):
+            skipped_blank_rows += 1
             continue
 
         date_key = _strip_wrapping_quotes(row.get(DATEKEY_COL, ""))
         if not date_key:
+            skipped_missing_date += 1
             continue
 
         current_version = _parse_int(row.get(VERSION_COL, ""), default=1)
@@ -318,25 +335,105 @@ def generate(
         puzzle_path = puzzles_dir / filename
         url = f"/puzzles/{filename}"
 
+        existed_before = puzzle_path.exists()
+
         # Write puzzle json and compute sha
         sha256 = _sha256_text(json.dumps(puzzle_obj, ensure_ascii=False, indent=2) + "\n")
 
         if not dry_run:
             sha256 = write_puzzle_json(puzzle_path, puzzle_obj)
 
-        puzzles_manifest[date_key] = {
+        new_manifest_entry = {
             "version": current_version,
             "url": url,
             "sha256": sha256,
         }
 
-    # Update generatedAtUtc
-    manifest["meta"]["generatedAtUtc"] = _utc_now_iso_z()
+        existing_manifest_entry = puzzles_manifest.get(date_key)
+        if existing_manifest_entry != new_manifest_entry:
+            any_manifest_updates = True
+        puzzles_manifest[date_key] = new_manifest_entry
+
+        created = (not existed_before) and (not dry_run)
+        refreshed = existed_before and (not dry_run)
+        if dry_run:
+            # In dry-run, treat a missing output file as "would create".
+            created = not existed_before
+            refreshed = existed_before
+
+        reason = ""
+        if bumped:
+            reason = "content changed -> version bumped"
+        elif not stored_hash:
+            reason = "initialized contentHash"
+        else:
+            reason = "no content change"
+
+        results.append(
+            RowResult(
+                date_key=date_key,
+                version=current_version,
+                created=created,
+                refreshed=refreshed,
+                bumped=bumped,
+                reason=reason,
+            )
+        )
+
+    # Only update the manifest timestamp if the manifest contents changed.
+    # This keeps runs with no effective changes from churning manifest.json.
+    if any_manifest_updates:
+        manifest["meta"]["generatedAtUtc"] = _utc_now_iso_z()
 
     if not dry_run:
-        save_manifest(manifest_path, manifest)
+        if any_manifest_updates:
+            save_manifest(manifest_path, manifest)
         if any_csv_updates:
             write_csv_table(csv_path, table)
+
+    # ---- Logging summary ----
+    prefix = "DRY RUN" if dry_run else "OK"
+    created_keys = [r for r in results if r.created]
+    bumped_keys = [r for r in results if r.bumped]
+    refreshed_keys = [r for r in results if r.refreshed and not r.created]
+
+    if results:
+        print(f"[{prefix}] Processed {len(results)} puzzle row(s).", flush=True)
+    else:
+        print(f"[{prefix}] No puzzle rows processed.", flush=True)
+
+    if created_keys:
+        print(f"[{prefix}] Created {len(created_keys)} new puzzle file(s):", flush=True)
+        for r in created_keys:
+            print(f"  - {r.date_key}.v{r.version}.json", flush=True)
+    else:
+        print(f"[{prefix}] No new puzzle files created.", flush=True)
+
+    if bumped_keys:
+        print(f"[{prefix}] Version bumps ({len(bumped_keys)}):", flush=True)
+        for r in bumped_keys:
+            print(f"  - {r.date_key} -> v{r.version} ({r.reason})", flush=True)
+
+    if refreshed_keys and not dry_run:
+        print(f"[{prefix}] Refreshed existing puzzle file(s): {len(refreshed_keys)}", flush=True)
+
+    if skipped_blank_rows:
+        print(f"[{prefix}] Skipped blank row(s): {skipped_blank_rows}", flush=True)
+    if skipped_missing_date:
+        print(f"[{prefix}] Skipped row(s) missing {DATEKEY_COL}: {skipped_missing_date}", flush=True)
+
+    if any_csv_updates:
+        print(f"[{prefix}] CSV updated: {csv_path.name}", flush=True)
+    else:
+        print(f"[{prefix}] CSV unchanged.", flush=True)
+
+    if any_manifest_updates:
+        if dry_run:
+            print(f"[{prefix}] Manifest would be updated: {manifest_path.name}", flush=True)
+        else:
+            print(f"[{prefix}] Manifest updated: {manifest_path.name}", flush=True)
+    else:
+        print(f"[{prefix}] Manifest unchanged.", flush=True)
 
 
 def main() -> None:
