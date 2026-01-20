@@ -1,0 +1,46 @@
+{
+  "id": "2026-01-21",
+  "dateKey": "2026-01-21",
+  "version": 2,
+  "category": "Place",
+  "tags": [
+    "City",
+    "Europe",
+    "Italy"
+  ],
+  "answerCanonical": "Venice",
+  "answerAliases": [],
+  "hints": [
+    {
+      "id": "h1",
+      "index": 0,
+      "text": "For part of the year, faces disappear while the city fills up.",
+      "explanationText": "During Venice's annual Carnival, many people wear traditional Venetian masks, hiding their faces. At the same time, the city fills with visitors from around the world."
+    },
+    {
+      "id": "h2",
+      "index": 1,
+      "text": "You can cross the entire city without ever seeing a car.",
+      "explanationText": "Venice has no roads for cars. Movement happens on foot or by boat, making it possible to walk across the city without encountering any automobiles."
+    },
+    {
+      "id": "h3",
+      "index": 2,
+      "text": "Here, streets are wet and parking is mostly floating.",
+      "explanationText": "Canals function as streets, and boats serve as the primary vehicles."
+    },
+    {
+      "id": "h4",
+      "index": 3,
+      "text": "This city was built across more than a hundred small islands.",
+      "explanationText": "Venice is spread over 100+ islands connected by bridges."
+    },
+    {
+      "id": "h5",
+      "index": 4,
+      "text": "I lie in a lagoon on the Adriatic Sea, in northeastern Italy.",
+      "explanationText": "This gives Venice's unique geographic setting."
+    }
+  ],
+  "solutionExplanation": "The hints describe Venice, a car-free city defined by canals, bridges, Carnival traditions, and its unique location on a lagoon in northeastern Italy."
+}

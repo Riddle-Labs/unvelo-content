@@ -30,10 +30,35 @@
       "version": 1,
       "url": "/puzzles/2026-01-05.v1.json",
       "sha256": "c4482b6dcc4cce0e951d34e33f0efb294d2ed56850cad9f48c78cf5a59aa46b4"
+    },
+    "2026-01-20": {
+      "version": 2,
+      "url": "/puzzles/2026-01-20.v2.json",
+      "sha256": "940389d04685e4f6ef33de10e6e91b8fec10e9ba8ca6561546cc17a7e524425e"
+    },
+    "2026-01-21": {
+      "version": 2,
+      "url": "/puzzles/2026-01-21.v2.json",
+      "sha256": "2acbbd088e2b7913e730c7ffd45df269428c54e47d94e97d6e4be559551ce1a4"
+    },
+    "2026-01-22": {
+      "version": 2,
+      "url": "/puzzles/2026-01-22.v2.json",
+      "sha256": "fd786ff5aabdea4345926bb1c80dd9e043fd2c586135a3de82c53a8ad8b820a2"
+    },
+    "2026-01-23": {
+      "version": 2,
+      "url": "/puzzles/2026-01-23.v2.json",
+      "sha256": "2391da04dfb7f17f8c24cc8f18308e338db793c460eed9c378d0cb018d66aeb5"
+    },
+    "2026-01-24": {
+      "version": 2,
+      "url": "/puzzles/2026-01-24.v2.json",
+      "sha256": "d9633e4bca64bd50fad94d23a7ad115c7f9d7d84c3e469cbd1db8db4a43bddcd"
     }
   },
   "meta": {
-    "generatedAtUtc": "2026-01-01T19:05:40Z",
+    "generatedAtUtc": "2026-01-20T11:14:19Z",
     "minAppVersion": "1.0.0",
     "prefetchDays": 7
   }
